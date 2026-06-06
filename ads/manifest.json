@@ -1,0 +1,614 @@
+[
+  {
+    "file": "ad01-goeswhereyougo.html",
+    "out": "ad01-goeswhereyougo.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "It goes where you go.",
+    "tag": "4:5",
+    "img": "trunk-single-cognac-4x5.jpg"
+  },
+  {
+    "file": "ad02-phonecase.html",
+    "out": "ad02-phonecase.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Your phone case is not a wallet.",
+    "tag": "9:16",
+    "img": "bodega-black-9x16-A.jpg"
+  },
+  {
+    "file": "ad03-fourfinishes.html",
+    "out": "ad03-fourfinishes.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Four finishes. One obsession.",
+    "tag": "9:16",
+    "img": "float-4col-9x16-v2.jpg"
+  },
+  {
+    "file": "ad04-sharp.html",
+    "out": "ad04-sharp.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Locked on you.",
+    "tag": "9:16",
+    "img": "red-drama-black-9x16.jpg"
+  },
+  {
+    "file": "ad05-summersorted.html",
+    "out": "ad05-summersorted.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Summer, sorted.",
+    "tag": "4:5",
+    "img": "carhood-cognac-A.png"
+  },
+  {
+    "file": "ad06-onepress.html",
+    "out": "ad06-onepress.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "One press. Cards up.",
+    "tag": "9:16",
+    "img": "pocket-pull-cognac-9x16-v2.png"
+  },
+  {
+    "file": "ad07-details.html",
+    "out": "ad07-details.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Dress the details.",
+    "tag": "4:5",
+    "img": "books-navy-4x5.jpg"
+  },
+  {
+    "file": "ad08-walletsareback.html",
+    "out": "ad08-walletsareback.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Wallets are back.",
+    "tag": "9:16",
+    "img": "reflective-navy-9x16.png"
+  },
+  {
+    "file": "ad09-sketchstatement.html",
+    "out": "ad09-sketchstatement.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "From sketch to statement.",
+    "tag": "4:5",
+    "img": "carhood-cognac-B.jpg"
+  },
+  {
+    "file": "ad10-dailyjourney.html",
+    "out": "ad10-dailyjourney.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "For the daily journey.",
+    "tag": "9:16",
+    "img": "dashboard-cognac-9x16.png"
+  },
+  {
+    "file": "ad11-everyday.html",
+    "out": "ad11-everyday.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Designed for the everyday.",
+    "tag": "4:5",
+    "img": "pedestal-A.jpg"
+  },
+  {
+    "file": "ad12-onestandard.html",
+    "out": "ad12-onestandard.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Four colours. One standard.",
+    "tag": "4:5",
+    "img": "catalog-stack-4col.png"
+  },
+  {
+    "file": "ad13-edc.html",
+    "out": "ad13-edc.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Everything you carry. Sorted.",
+    "tag": "4:5",
+    "img": "edc-flatlay-navy.jpg"
+  },
+  {
+    "file": "ad14-alwaysinsight.html",
+    "out": "ad14-alwaysinsight.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Sharp and always in sight.",
+    "tag": "9:16",
+    "img": "terracotta-cognac-9x16.png"
+  },
+  {
+    "file": "ad15-goeswhereyougo-v.html",
+    "out": "ad15-goeswhereyougo-v.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "It goes where you go (9:16).",
+    "tag": "9:16",
+    "img": "trunk-hero-9x16-A.png"
+  },
+  {
+    "file": "ad16-frontpocket.html",
+    "out": "ad16-frontpocket.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Slim enough for your front pocket.",
+    "tag": "4:5",
+    "img": "demo-reflective-cognac-A.jpg"
+  },
+  {
+    "file": "ad17-presspopgo.html",
+    "out": "ad17-presspopgo.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Press. Pop. Go.",
+    "tag": "9:16",
+    "img": "amber-spotlight-black-9x16.png"
+  },
+  {
+    "file": "ad18-pickyourfinish.html",
+    "out": "ad18-pickyourfinish.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Pick your finish.",
+    "tag": "9:16",
+    "img": "trunk-lineup-9x16-A.png"
+  },
+  {
+    "file": "ad19-nobrick.html",
+    "out": "ad19-nobrick.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "No back-pocket brick.",
+    "tag": "9:16",
+    "img": "bodega-black-9x16-B.jpg"
+  },
+  {
+    "file": "ad20-feeling.html",
+    "out": "ad20-feeling.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Every great brand starts with a feeling.",
+    "tag": "4:5",
+    "img": "demo-reflective-cognac-B.jpg"
+  },
+  {
+    "file": "ad21-everyday-stool.html",
+    "out": "ad21-everyday-stool.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Designed for the everyday (stool).",
+    "tag": "4:5",
+    "img": "stool-cognac-4x5.jpg"
+  },
+  {
+    "file": "ad22-thewholeset.html",
+    "out": "ad22-thewholeset.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "The whole set.",
+    "tag": "4:5",
+    "img": "trunk-lineup-4col-A.png"
+  },
+  {
+    "file": "ad23-quietlysharp.html",
+    "out": "ad23-quietlysharp.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Quietly sharp.",
+    "tag": "4:5",
+    "img": "terracotta-grey.png"
+  },
+  {
+    "file": "ad24-fourfinishes-45.html",
+    "out": "ad24-fourfinishes-45.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Four finishes (4:5).",
+    "tag": "4:5",
+    "img": "float-4col-A.jpg"
+  },
+  {
+    "file": "ad25-grabandgo.html",
+    "out": "ad25-grabandgo.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Grab and go.",
+    "tag": "4:5",
+    "img": "marble-flatlay-cognac-4x5.png"
+  },
+  {
+    "file": "ad26-slimyourcarry.html",
+    "out": "ad26-slimyourcarry.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Slim your carry.",
+    "tag": "9:16",
+    "img": "frontpocket-slim-black-9x16.png"
+  },
+  {
+    "file": "ad27-precision.html",
+    "out": "ad27-precision.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Precision in the palm.",
+    "tag": "9:16",
+    "img": "macro-mechanism-black-9x16.jpg"
+  },
+  {
+    "file": "ad28-cafejourney.html",
+    "out": "ad28-cafejourney.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "For the daily journey (café).",
+    "tag": "4:5",
+    "img": "cafe-table-cognac-4x5.png"
+  },
+  {
+    "file": "ad29-everyday-stool4.html",
+    "out": "ad29-everyday-stool4.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "One for every day.",
+    "tag": "4:5",
+    "img": "stool-all4-4x5.png"
+  },
+  {
+    "file": "ad30-summer.html",
+    "out": "ad30-summer.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Pocket-sized. Sun-ready.",
+    "tag": "9:16",
+    "img": "beach-summer-cognac-9x16.png"
+  },
+  {
+    "file": "ad31-thegift.html",
+    "out": "ad31-thegift.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "The gift.",
+    "tag": "4:5",
+    "img": "giftbox-navy-4x5.png"
+  },
+  {
+    "file": "ad32-onpurpose.html",
+    "out": "ad32-onpurpose.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Made on purpose.",
+    "tag": "4:5",
+    "img": "desk-sketch-cognac-4x5.jpg"
+  },
+  {
+    "file": "ad33-catchcarry.html",
+    "out": "ad33-catchcarry.png",
+    "w": 1080,
+    "h": 1080,
+    "label": "Catch. Carry.",
+    "tag": "1:1",
+    "img": "toss-black-1x1.png"
+  },
+  {
+    "file": "ad34-dressedup.html",
+    "out": "ad34-dressedup.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Dressed up.",
+    "tag": "9:16",
+    "img": "coat-pocket-navy-9x16.png"
+  },
+  {
+    "file": "ad35-cosmic.html",
+    "out": "ad35-cosmic.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Built different.",
+    "tag": "9:16",
+    "img": "../library/crazy-black-cosmic.jpeg"
+  },
+  {
+    "file": "ad36-cyberpunk.html",
+    "out": "ad36-cyberpunk.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "City-proof.",
+    "tag": "4:5",
+    "img": "../library/crazy-navy-cyberpunk.png"
+  },
+  {
+    "file": "ad37-brutalist.html",
+    "out": "ad37-brutalist.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Solid ground.",
+    "tag": "9:16",
+    "img": "../library/crazy-grey-brutalist.png"
+  },
+  {
+    "file": "ad38-monolith.html",
+    "out": "ad38-monolith.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "One piece.",
+    "tag": "9:16",
+    "img": "../library/crazy-black-monolith.png"
+  },
+  {
+    "file": "ad39-flame.html",
+    "out": "ad39-flame.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Bring the heat.",
+    "tag": "9:16",
+    "img": "../library/flame.png"
+  },
+  {
+    "file": "ad40-exploded.html",
+    "out": "ad40-exploded.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Engineered to pop.",
+    "tag": "4:5",
+    "img": "../library/exploded.png"
+  },
+  {
+    "file": "ad41-ice.html",
+    "out": "ad41-ice.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Stays sharp.",
+    "tag": "4:5",
+    "img": "../library/ice-frozen.png"
+  },
+  {
+    "file": "ad42-glass.html",
+    "out": "ad42-glass.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Nothing breaks your stride.",
+    "tag": "9:16",
+    "img": "../library/glass.png"
+  },
+  {
+    "file": "ad43-chrome.html",
+    "out": "ad43-chrome.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Make a splash.",
+    "tag": "9:16",
+    "img": "../library/chrome-splash.png"
+  },
+  {
+    "file": "ad44-macro.html",
+    "out": "ad44-macro.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Feel the detail.",
+    "tag": "9:16",
+    "img": "../library/macro-texture.png"
+  },
+  {
+    "file": "ad45-piano.html",
+    "out": "ad45-piano.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Reflect well.",
+    "tag": "9:16",
+    "img": "../library/refl-pianoblack.png"
+  },
+  {
+    "file": "ad46-lighttrails.html",
+    "out": "ad46-lighttrails.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Keep up.",
+    "tag": "9:16",
+    "img": "../library/urban-lighttrails.png"
+  },
+  {
+    "file": "ad47-billboard.html",
+    "out": "ad47-billboard.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Made for the city.",
+    "tag": "9:16",
+    "img": "../library/urban-billboard.png"
+  },
+  {
+    "file": "ad48-carhood-urban.html",
+    "out": "ad48-carhood-urban.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Ride ready.",
+    "tag": "4:5",
+    "img": "../library/urban-carhood.png"
+  },
+  {
+    "file": "ad49-sand.html",
+    "out": "ad49-sand.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Off the grid.",
+    "tag": "9:16",
+    "img": "../library/sand.png"
+  },
+  {
+    "file": "ad50-floating.html",
+    "out": "ad50-floating.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Drop the bulk.",
+    "tag": "4:5",
+    "img": "../library/floating-1.png"
+  },
+  {
+    "file": "ad51-driftwood.html",
+    "out": "ad51-driftwood.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Naturally sharp.",
+    "tag": "4:5",
+    "img": "../library/driftwood-1.png"
+  },
+  {
+    "file": "ad52-cascade.html",
+    "out": "ad52-cascade.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Cards, handled.",
+    "tag": "9:16",
+    "img": "../library/cards-cascade.png"
+  },
+  {
+    "file": "ad53-stackyourway.html",
+    "out": "ad53-stackyourway.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Stack your way.",
+    "tag": "4:5",
+    "img": "../library/colourway-stack.png"
+  },
+  {
+    "file": "ad54-skyline.html",
+    "out": "ad54-skyline.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Own the skyline.",
+    "tag": "9:16",
+    "img": "../library/urban-multi-skyline.png"
+  },
+  {
+    "file": "ad55-smoke.html",
+    "out": "ad55-smoke.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Smooth operator.",
+    "tag": "9:16",
+    "img": "../library/crazy-brown-smoke.png"
+  },
+  {
+    "file": "ad56-powder.html",
+    "out": "ad56-powder.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Drop everything.",
+    "tag": "9:16",
+    "img": "../library/crazy-black-powder.png"
+  },
+  {
+    "file": "ad57-waves.html",
+    "out": "ad57-waves.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Make waves.",
+    "tag": "9:16",
+    "img": "../library/crazy-navy-splash.png"
+  },
+  {
+    "file": "ad58-grip.html",
+    "out": "ad58-grip.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Grip it.",
+    "tag": "4:5",
+    "img": "../library/gloved-navy.png"
+  },
+  {
+    "file": "ad59-stone.html",
+    "out": "ad59-stone.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Set in stone.",
+    "tag": "4:5",
+    "img": "../library/marble-pedestal.png"
+  },
+  {
+    "file": "ad60-anyone.html",
+    "out": "ad60-anyone.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Sharp on anyone.",
+    "tag": "4:5",
+    "img": "../library/model-woman-emerald.png"
+  },
+  {
+    "file": "ad61-everywhere.html",
+    "out": "ad61-everywhere.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Wear it everywhere.",
+    "tag": "9:16",
+    "img": "../library/model-dark-cobalt-fashion.png"
+  },
+  {
+    "file": "ad62-streetwear.html",
+    "out": "ad62-streetwear.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "Pocket. Sorted.",
+    "tag": "4:5",
+    "img": "../library/model-editorial-dark-streetwear.png"
+  },
+  {
+    "file": "ad63-standout.html",
+    "out": "ad63-standout.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "Stand out.",
+    "tag": "9:16",
+    "img": "../library/model-twists-neon-1.png"
+  },
+  {
+    "file": "ad64-afterhours.html",
+    "out": "ad64-afterhours.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "After hours.",
+    "tag": "4:5",
+    "img": "../library/model-woman-series-noir.png"
+  },
+  {
+    "file": "ad65-inthewild.html",
+    "out": "ad65-inthewild.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "In the wild (UGC).",
+    "tag": "9:16",
+    "img": "../library/ugc-1.png"
+  },
+  {
+    "file": "tpl01-916-dark.html",
+    "out": "tpl01-916-dark.png",
+    "w": 1080,
+    "h": 1920,
+    "label": "TEMPLATE — 9:16 dark",
+    "tag": "9:16",
+    "img": "../library/refl-pianoblack.png"
+  },
+  {
+    "file": "tpl02-45-light.html",
+    "out": "tpl02-45-light.png",
+    "w": 1080,
+    "h": 1350,
+    "label": "TEMPLATE — 4:5 light",
+    "tag": "4:5",
+    "img": "stool-cognac-4x5.jpg"
+  },
+  {
+    "file": "tpl03-11-dark.html",
+    "out": "tpl03-11-dark.png",
+    "w": 1080,
+    "h": 1080,
+    "label": "TEMPLATE — 1:1 dark",
+    "tag": "1:1",
+    "img": "../library/crazystudio-multi.png"
+  }
+]

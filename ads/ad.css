@@ -1,0 +1,76 @@
+/* SPECTA flagship ad system — Outfit + Lora, cream/ink/coral, masthead + scrim discipline */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,500;1,400;1,500&display=swap');
+
+:root{
+  --cream:#FEF7EA; --ink:#0C0F12; --coral:#FF5A4D; --navy:#002F49; --maroon:#5B1112;
+  --sans:'Outfit',-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:'Lora',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+
+/* artboard */
+.ad{position:relative;overflow:hidden;font-family:var(--sans);color:var(--cream);background:#000}
+.ad.r45{width:1080px;height:1350px}      /* 4:5  */
+.ad.r916{width:1080px;height:1920px}     /* 9:16 */
+.ad.r11{width:1080px;height:1080px}       /* 1:1  */
+.ad .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* scrims */
+.scrim{position:absolute;inset:0;pointer-events:none}
+.sb{background:linear-gradient(to top,rgba(8,9,11,.82),rgba(8,9,11,.30) 34%,transparent 58%)}
+.st{background:linear-gradient(to bottom,rgba(8,9,11,.66),rgba(8,9,11,.10) 30%,transparent 46%)}
+.sl{background:linear-gradient(to right,rgba(8,9,11,.62),transparent 52%)}
+.vig{background:radial-gradient(120% 90% at 50% 48%,transparent 52%,rgba(0,0,0,.42))}
+.theme-light .sb{background:linear-gradient(to top,rgba(232,228,219,.92),rgba(232,228,219,.25) 40%,transparent 62%)}
+.theme-light .st{background:linear-gradient(to bottom,rgba(232,228,219,.85),transparent 42%)}
+.theme-light{color:var(--ink)}
+
+/* lockup */
+.lock{position:absolute;display:flex;align-items:center;gap:13px;z-index:5}
+.lock img.logo{height:74px;width:auto;display:block;filter:drop-shadow(0 2px 16px rgba(0,0,0,.42))}
+.theme-light .lock img.logo{filter:drop-shadow(0 1px 6px rgba(0,0,0,.12))}
+.lock .mk{width:38px;height:42px;flex:0 0 auto;background:var(--coral);
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  display:grid;place-items:center;color:var(--ink);font-weight:900;font-size:21px;font-family:var(--serif);font-style:italic}
+.lock .wm{font-weight:800;letter-spacing:.16em;font-size:27px}
+.theme-light .lock .wm{color:var(--ink)}
+
+/* content blocks */
+.c{position:absolute;z-index:6}
+.eyebrow{font-size:21px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--coral);margin-bottom:20px}
+.head{font-weight:900;letter-spacing:-.025em;line-height:.9;text-transform:uppercase;
+  font-size:118px;text-shadow:0 2px 40px rgba(0,0,0,.4)}
+.theme-light .head{text-shadow:none}
+.head .coral{color:var(--coral)}
+.head .thin{font-weight:300}
+.serif{font-family:var(--serif);font-style:italic;font-weight:500;text-transform:none;letter-spacing:-.01em}
+.sub{font-size:26px;font-weight:500;line-height:1.34;margin-top:24px;max-width:20ch;color:rgba(254,247,234,.92)}
+.theme-light .sub{color:rgba(12,15,18,.78)}
+
+/* oversized ghost masthead (editorial device) */
+.mast{position:absolute;z-index:4;font-weight:300;letter-spacing:-.02em;line-height:.8;color:rgba(254,247,234,.16)}
+.theme-light .mast{color:rgba(12,15,18,.13)}
+
+/* cta pill */
+.cta{display:inline-flex;align-items:center;gap:12px;margin-top:34px;
+  background:var(--coral);color:var(--ink);font-weight:800;font-size:23px;letter-spacing:.02em;
+  padding:18px 30px;border-radius:999px;width:fit-content}
+.cta.ghost{background:transparent;color:var(--cream);border:2px solid rgba(254,247,234,.55)}
+.cta .dot{width:9px;height:9px;border-radius:50%;background:var(--ink)}
+
+/* colour chips */
+.chips{display:flex;gap:14px;margin-top:30px}
+.chips i{width:46px;height:46px;border-radius:50%;display:block;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18),0 6px 16px rgba(0,0,0,.35)}
+.c-blk{background:#1a1b1d}.c-gry{background:#6e747a}.c-nvy{background:#2a3a57}.c-cog{background:#9c5a2c}
+
+/* crosshair / scope reticle */
+.reticle{position:absolute;z-index:4;border:2px solid rgba(255,90,77,.85);border-radius:50%}
+.reticle:before,.reticle:after{content:"";position:absolute;background:rgba(255,90,77,.85)}
+.reticle:before{left:50%;top:-26px;bottom:-26px;width:2px;transform:translateX(-1px)}
+.reticle:after{top:50%;left:-26px;right:-26px;height:2px;transform:translateY(-1px)}
+.tick{position:absolute;z-index:5;font-family:var(--sans);font-size:18px;letter-spacing:.2em;color:rgba(255,90,77,.9);font-weight:600}
+
+/* price/footnote */
+.foot{position:absolute;z-index:6;font-size:20px;font-weight:500;letter-spacing:.04em;color:rgba(254,247,234,.7)}
+.theme-light .foot{color:rgba(12,15,18,.6)}

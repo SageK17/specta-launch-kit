@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;800;900&family=Lora:ital@1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0C0F12;font-family:'Outfit',sans-serif;color:#FEF7EA}
+.w{position:absolute;inset:0;display:grid;place-items:center;text-align:center;opacity:0}
+.w b{font-weight:900;font-size:168px;letter-spacing:-.03em;line-height:.9}
+.coral{color:#FF5A4D}
+.end{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:24px;opacity:0}
+.end .mk{width:120px;height:132px;background:#FF5A4D;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;color:#0C0F12;font:italic 700 70px 'Lora',serif}
+.end .wm{font-weight:900;font-size:96px;letter-spacing:.04em}
+.end .tag{font:italic 500 40px 'Lora',serif;color:#FF5A4D}
+.bar{position:absolute;left:0;bottom:0;height:10px;background:#FF5A4D;width:0;animation:bar 5s linear forwards}
+@keyframes bar{0%{width:0}100%{width:1080px}}
+#w1{animation:k1 5s linear forwards}#w2{animation:k2 5s linear forwards}#w3{animation:k3 5s linear forwards}#w4{animation:k4 5s linear forwards}#we{animation:ke 5s linear forwards}
+@keyframes k1{0%{opacity:0;transform:translateY(50px) scale(.92)}4%{opacity:1;transform:none}15%{opacity:1}19%{opacity:0}100%{opacity:0}}
+@keyframes k2{0%,20%{opacity:0;transform:translateY(50px) scale(.92)}24%{opacity:1;transform:none}35%{opacity:1}39%{opacity:0}100%{opacity:0}}
+@keyframes k3{0%,40%{opacity:0;transform:translateY(50px) scale(.92)}44%{opacity:1;transform:none}55%{opacity:1}59%{opacity:0}100%{opacity:0}}
+@keyframes k4{0%,60%{opacity:0;transform:translateY(50px) scale(.92)}65%{opacity:1;transform:none}83%{opacity:1}87%{opacity:0}100%{opacity:0}}
+@keyframes ke{0%,86%{opacity:0;transform:scale(.94)}91%{opacity:1;transform:none}100%{opacity:1}}
+</style></head>
+<body>
+<div class="stage">
+  <div class="w" id="w1"><b>No bulk.</b></div>
+  <div class="w" id="w2"><b>No brick.</b></div>
+  <div class="w" id="w3"><b>No<br>gimmicks.</b></div>
+  <div class="w" id="w4"><b>Just <span class="coral">Specta.</span></b></div>
+  <div class="end" id="we">
+    <div class="mk">S</div>
+    <div class="wm">SPECTA</div>
+    <div class="tag">Simply Spectacular.</div>
+  </div>
+  <div class="bar"></div>
+</div>
+</body></html>

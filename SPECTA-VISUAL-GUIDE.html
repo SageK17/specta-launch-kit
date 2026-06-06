@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPECTA — Visual Style Guide (from inspo-2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C0F12;          /* stage / page */
+    --ink-2:#15191E;        /* panels */
+    --ink-3:#1B2026;        /* raised */
+    --line:#252C34;         /* hairlines */
+    --line-2:#323b44;
+    --cream:#FEF7EA;        /* primary text / paper */
+    --muted:#9FB0BD;        /* secondary text */
+    --faint:#6c7a85;        /* tertiary */
+    --signal:#FF5A4D;       /* coral accent (maroon reads dead on dark) */
+    --maroon:#5B1112;
+    --navy:#002F49;
+    --brown:#674635;
+    --sans:'Outfit',-apple-system,Segoe UI,Roboto,sans-serif;
+    --serif:'Lora',Georgia,'Times New Roman',serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--ink);color:var(--cream);
+    font-family:var(--sans);font-weight:400;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(900px 600px at 80% -5%, rgba(255,90,77,.06), transparent 60%);
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+
+  /* ---------- layout shell ---------- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+
+  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--signal);font-weight:600;margin:0 0 14px}
+  h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.02em;margin:0 0 8px;line-height:1.05}
+  h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin:0 0 6px}
+  .lede{color:var(--muted);max-width:62ch;font-size:16px;margin:0 0 30px}
+  p{margin:0 0 14px}
+  .muted{color:var(--muted)}
+
+  /* ---------- top nav ---------- */
+  nav.top{
+    position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(12,15,18,.82);border-bottom:1px solid var(--line);
+  }
+  nav.top .row{max-width:var(--maxw);margin:0 auto;padding:12px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.06em}
+  .hex{width:22px;height:24px;flex:0 0 auto;background:var(--signal);
+    clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    display:grid;place-items:center;color:var(--ink);font-size:13px;font-weight:900}
+  nav.top .links{display:flex;gap:4px 2px;flex-wrap:wrap;margin-left:auto}
+  nav.top .links a{font-size:12.5px;color:var(--muted);padding:6px 10px;border-radius:7px;letter-spacing:.02em}
+  nav.top .links a:hover{color:var(--cream);background:var(--ink-3)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;border-top:none}
+  .hero .wrap{padding-top:70px;padding-bottom:54px}
+  .mast{position:relative}
+  .mast .ghost{font-weight:300;font-size:clamp(64px,17vw,210px);letter-spacing:-.03em;line-height:.8;
+    color:transparent;-webkit-text-stroke:1px rgba(254,247,234,.16);margin:0}
+  .mast .lead{font-weight:900;font-size:clamp(30px,6.6vw,82px);letter-spacing:-.03em;line-height:.92;margin:-.18em 0 0}
+  .mast .lead em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--signal)}
+  .hero .sub{color:var(--muted);max-width:64ch;margin:22px 0 0;font-size:17px}
+  .hero .meta{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:12px;letter-spacing:.04em;color:var(--cream);background:var(--ink-3);border:1px solid var(--line-2);
+    padding:6px 11px;border-radius:999px}
+  .tag b{color:var(--signal);font-weight:700}
+  .hero .strip{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:34px}
+  .hero .strip .cell{aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+  @media(max-width:760px){.hero .strip{grid-template-columns:repeat(3,1fr)}}
+
+  /* ---------- generic grids ---------- */
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .card .ph{aspect-ratio:4/5;overflow:hidden;background:#000}
+  .card .ph.wide{aspect-ratio:3/2}
+  .card .body{padding:15px 16px 17px}
+  .card .ref{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.02em}
+  .card h3{margin:7px 0 7px}
+  .card p{font-size:14px;color:var(--muted);margin:0 0 12px}
+  .when{font-size:12.5px;color:var(--cream);background:var(--ink-3);border:1px solid var(--line);
+    border-radius:8px;padding:8px 11px;margin-bottom:12px}
+  .when b{color:var(--signal)}
+
+  /* ---------- recipe / code ---------- */
+  .recipe{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:#cdd8df;
+    background:#0a0d10;border:1px solid var(--line);border-left:3px solid var(--signal);
+    border-radius:10px;padding:13px 14px;white-space:pre-wrap;word-break:break-word}
+  .recipe .k{color:var(--signal)}
+  .recipe .c{color:#6f8a99}
+
+  /* ---------- swatches ---------- */
+  .sw-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  @media(max-width:900px){.sw-grid{grid-template-columns:repeat(4,1fr)}}
+  @media(max-width:560px){.sw-grid{grid-template-columns:repeat(3,1fr)}}
+  .sw .chip{aspect-ratio:1/1.05;border-radius:11px;border:1px solid rgba(255,255,255,.08);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+  .sw .nm{font-size:12.5px;font-weight:600;margin-top:9px;letter-spacing:.01em}
+  .sw .hx{font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .palette-label{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+    font-weight:600;margin:26px 0 14px;display:flex;align-items:center;gap:12px}
+  .palette-label:before{content:"";height:1px;width:26px;background:var(--line-2)}
+
+  /* ---------- type specimens ---------- */
+  .spec{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:14px}
+  .spec .label{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.06em;margin-bottom:10px}
+  .d-display{font-weight:900;font-size:clamp(34px,7vw,68px);letter-spacing:-.03em;line-height:.92;text-transform:uppercase}
+  .d-kicker{font-weight:600;font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--cream)}
+  .d-tag{font-weight:700;font-size:clamp(18px,2.6vw,26px);letter-spacing:-.01em}
+  .d-serif{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,4vw,40px);color:var(--signal)}
+  .d-caption{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.02em}
+
+  /* ---------- light cards ---------- */
+  .light{background:var(--ink-2);border:1px solid var(--line);border-radius:13px;padding:18px;position:relative;overflow:hidden;min-height:148px}
+  .light h3{font-size:16px;margin-bottom:6px}
+  .light p{font-size:13.5px;color:var(--muted);margin:0;position:relative;z-index:2}
+  .light .demo{position:absolute;inset:0;z-index:0;opacity:.9}
+  .light .inner{position:relative;z-index:2}
+  .l-chiaro{background:radial-gradient(120% 90% at 25% 8%, rgba(254,247,234,.9), rgba(254,247,234,.12) 26%, transparent 42%), #0a0d10}
+  .l-radial{background:radial-gradient(70% 60% at 50% 62%, #c8842e, #6e3d12 45%, #160d05 80%)}
+  .l-slats{background:
+     repeating-linear-gradient(118deg, rgba(254,247,234,.0) 0 22px, rgba(254,247,234,.16) 22px 30px),
+     linear-gradient(120deg,#262d34,#11151a)}
+  .l-soft{background:linear-gradient(120deg,#cdc6b8,#9fa49c 60%,#6f7570);}
+  .l-void{background:radial-gradient(80% 70% at 60% 40%, #20262c, #0a0c0f 70%)}
+  .l-octa{background:radial-gradient(60% 50% at 50% 0%, rgba(254,247,234,.85), rgba(254,247,234,.06) 40%, transparent 55%), #14181d}
+  .light.dark h3,.light.dark p{color:var(--cream)}
+  .light.dark p{color:rgba(254,247,234,.82)}
+
+  /* ---------- do/don't ---------- */
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.dd{grid-template-columns:1fr}}
+  .dd .col{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .dd .col.do{border-top:3px solid #4fb477}
+  .dd .col.dont{border-top:3px solid var(--signal)}
+  .dd h3{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+  .dd .mk{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-weight:900;font-size:14px;flex:0 0 auto}
+  .dd .do .mk{background:#4fb477;color:#08130c}
+  .dd .dont .mk{background:var(--signal);color:#160404}
+  .dd ul{margin:0;padding:0;list-style:none}
+  .dd li{font-size:14px;color:var(--muted);padding:9px 0;border-top:1px solid var(--line);display:flex;gap:9px}
+  .dd li:first-child{border-top:none}
+  .dd li:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--line-2);margin-top:8px;flex:0 0 auto}
+  .dd .do li:before{background:#4fb477}
+  .dd .dont li:before{background:var(--signal)}
+
+  /* ---------- callout ---------- */
+  .callout{background:linear-gradient(180deg,#1a1411,#15191e);border:1px solid var(--line);border-left:3px solid var(--signal);
+    border-radius:12px;padding:18px 20px;margin:18px 0}
+  .callout b{color:var(--cream)}
+  .callout .lock{font-family:var(--mono);font-size:12px;color:#cdd8df;background:#0a0d10;border:1px solid var(--line);
+    border-radius:8px;padding:11px 12px;margin-top:12px;white-space:pre-wrap}
+
+  .two{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+  @media(max-width:820px){.two{grid-template-columns:1fr}}
+
+  footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  .pill{display:inline-block;font-size:11px;font-family:var(--mono);color:var(--signal);
+    border:1px solid var(--line-2);border-radius:999px;padding:3px 9px;margin-left:8px;vertical-align:middle}
+  .anchor{scroll-margin-top:72px}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="top">
+  <div class="row">
+    <span class="brand"><span class="hex">S</span> SPECTA</span>
+    <span class="muted" style="font-size:12.5px">Visual Style Guide</span>
+    <div class="links">
+      <a href="#dna">DNA</a>
+      <a href="#colour">Colour</a>
+      <a href="#type">Type</a>
+      <a href="#light">Light</a>
+      <a href="#comp">Composition</a>
+      <a href="#shots">Shot Recipes</a>
+      <a href="#logo">Logo Lock</a>
+      <a href="#dodont">Do / Don't</a>
+      <a href="#prompt">Prompt Kit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Derived from the inspo-2 reference board · IMG_4041–4062</p>
+    <div class="mast">
+      <p class="ghost">SPECTA</p>
+      <h1 class="lead">A LOOK YOU CAN<br>REPEAT — <em>Simply Spectacular</em></h1>
+    </div>
+    <p class="sub">A working visual system pulled straight from the saved Pinterest references in <code>inspo-2/</code>. It decodes <b>what makes those frames feel the way they do</b> — light, grade, colour, type, framing — and turns each recurring shot into a paste-ready recipe so new SPECTA visuals land in the same world every time.</p>
+    <div class="meta">
+      <span class="tag"><b>Mood</b> &nbsp;premium · honest · editorial</span>
+      <span class="tag"><b>Light</b> &nbsp;directional · warm · cinematic</span>
+      <span class="tag"><b>Hero</b> &nbsp;the product + real hands</span>
+      <span class="tag"><b>Type</b> &nbsp;Outfit + Lora</span>
+    </div>
+    <div class="strip">
+      <div class="cell"><img src="IMG_4041.jpg" alt="pocket pull"></div>
+      <div class="cell"><img src="do%20it/IMG_4062.jpg" alt="reflective still"></div>
+      <div class="cell"><img src="do%20it/IMG_4058.jpg" alt="float stack"></div>
+      <div class="cell"><img src="IMG_4051.jpg" alt="radial spotlight"></div>
+      <div class="cell"><img src="IMG_4053.jpg" alt="watch editorial"></div>
+      <div class="cell"><img src="series/pedestal-A.jpg" alt="applied pedestal set"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== DNA ===================== -->
+<section id="dna" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">01 — The North Star</p>
+    <h2>The one-sentence DNA</h2>
+    <p class="lede">If a frame doesn't pass this sentence, it's off-brand.</p>
+    <div class="spec">
+      <p class="d-tag" style="margin:0">“A <span style="color:var(--signal)">real object</span> in <span style="color:var(--signal)">honest, directional light</span>, framed with <span style="color:var(--signal)">confident negative space</span> and a <span style="color:var(--signal)">warm cinematic grade</span> — quiet enough to feel premium, sharp enough to stop the scroll.”</p>
+    </div>
+    <div class="two" style="margin-top:24px">
+      <div>
+        <h3>What the references have in common</h3>
+        <p class="muted" style="font-size:15px">Across 22 saved frames — wallets, watches, caps, jewellery, portraits, even a magazine cover — the same fingerprints repeat:</p>
+        <ul class="muted" style="font-size:15px;padding-left:18px;margin:0">
+          <li><b style="color:var(--cream)">One light, one idea.</b> A single dominant light source and a single subject. Everything else falls to shadow or blur.</li>
+          <li><b style="color:var(--cream)">Hands do the talking.</b> The product is held, pulled, pinched, slipped into a pocket — never just sitting there.</li>
+          <li><b style="color:var(--cream)">Texture in macro.</b> Saffiano weave, stitch, zip teeth, leather grain — shot close enough to feel.</li>
+          <li><b style="color:var(--cream)">Warm + restrained.</b> Earthy backdrops, gold-biased highlights, gentle desaturation, a touch of grain.</li>
+          <li><b style="color:var(--cream)">Big type, used sparingly.</b> When words appear they're huge and few — a headline and a kicker, nothing more.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>The feeling to protect</h3>
+        <p class="muted" style="font-size:15px">SPECTA's voice is <b style="color:var(--cream)">“No logos screaming. No gimmicks.”</b> The imagery has to match: it should look like a considered-design object photographed by someone who knows light — not an ad shouting at you.</p>
+        <div class="callout" style="margin-top:6px">
+          Lead with the <b>controlled, art-directed</b> end of the board (studio sets, designed surfaces, sculpted light). Candid “grab-shot” realism reads cheaper and is harder to fake convincingly — use it only when the hand/use-moment is the entire point.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COLOUR ===================== -->
+<section id="colour" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">02 — Colour System</p>
+    <h2>Colour</h2>
+    <p class="lede">Brand constants stay fixed. Everything else is an <b>earth-and-shadow</b> environment palette sampled from the board — warm neutrals, leather tones, and deep stages that let the product glow.</p>
+
+    <div class="palette-label">Brand core — fixed</div>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#FEF7EA"></div><div class="nm">Cream / Paper</div><div class="hx">#FEF7EA</div></div>
+      <div class="sw"><div class="chip" style="background:#0C0F12"></div><div class="nm">Ink / Stage</div><div class="hx">#0C0F12</div></div>
+      <div class="sw"><div class="chip" style="background:#002F49"></div><div class="nm">Nordic Noir</div><div class="hx">#002F49</div></div>
+      <div class="sw"><div class="chip" style="background:#5B1112"></div><div class="nm">Deep Maroon</div><div class="hx">#5B1112</div></div>
+      <div class="sw"><div class="chip" style="background:#674635"></div><div class="nm">Dark Brown</div><div class="hx">#674635</div></div>
+      <div class="sw"><div class="chip" style="background:#FF5A4D"></div><div class="nm">Signal Coral</div><div class="hx">#FF5A4D</div></div>
+    </div>
+    <p class="muted" style="font-size:13px;margin-top:12px">↑ Deep Maroon is the true brand red but it dies on dark backgrounds — use <b style="color:var(--signal)">Signal Coral #FF5A4D</b> for accents, CTAs and chips on dark frames; reserve Maroon for cream/light layouts.</p>
+
+    <div class="palette-label">Surfaces & sets — sampled from the board</div>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#C9C2B5"></div><div class="nm">Greige Seamless</div><div class="hx">#C9C2B5</div></div>
+      <div class="sw"><div class="chip" style="background:#C2AE82"></div><div class="nm">Canvas Khaki</div><div class="hx">#C2AE82</div></div>
+      <div class="sw"><div class="chip" style="background:#A8553A"></div><div class="nm">Terracotta</div><div class="hx">#A8553A</div></div>
+      <div class="sw"><div class="chip" style="background:#C8842E"></div><div class="nm">Amber Glow</div><div class="hx">#C8842E</div></div>
+      <div class="sw"><div class="chip" style="background:#C3D0D6"></div><div class="nm">Studio Blue</div><div class="hx">#C3D0D6</div></div>
+      <div class="sw"><div class="chip" style="background:#08090B"></div><div class="nm">Void Black</div><div class="hx">#08090B</div></div>
+    </div>
+
+    <div class="palette-label">Pedestal set — the look that landed</div>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#EDE4D3"></div><div class="nm">Pedestal Sand</div><div class="hx">#EDE4D3</div></div>
+      <div class="sw"><div class="chip" style="background:#E8896B"></div><div class="nm">Pedestal Coral</div><div class="hx">#E8896B</div></div>
+      <div class="sw"><div class="chip" style="background:#2C3A57"></div><div class="nm">Pedestal Navy</div><div class="hx">#2C3A57</div></div>
+      <div class="sw"><div class="chip" style="background:#B7B095"></div><div class="nm">Olive Drab</div><div class="hx">#B7B095</div></div>
+      <div class="sw"><div class="chip" style="background:#9FA49C"></div><div class="nm">Cool Shadow</div><div class="hx">#9FA49C</div></div>
+      <div class="sw"><div class="chip" style="background:#161A1E"></div><div class="nm">Panel</div><div class="hx">#161A1E</div></div>
+    </div>
+
+    <div class="palette-label">Product finishes — the 4 colourways</div>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#1A1B1D"></div><div class="nm">Midnight Black</div><div class="hx">#1A1B1D</div></div>
+      <div class="sw"><div class="chip" style="background:#6E747A"></div><div class="nm">Steel Grey</div><div class="hx">#6E747A</div></div>
+      <div class="sw"><div class="chip" style="background:#2A3A57"></div><div class="nm">Deep Navy</div><div class="hx">#2A3A57</div></div>
+      <div class="sw"><div class="chip" style="background:#9C5A2C"></div><div class="nm">Cognac</div><div class="hx">#9C5A2C</div></div>
+    </div>
+    <p class="muted" style="font-size:13px;margin-top:14px"><b style="color:var(--cream)">Rule of thumb:</b> pick <b>one</b> warm surface + <b>one</b> deep shadow per frame. Let the product's finish be the only “other” colour. Coral appears as type/accent only — never as a set colour (except the pedestal blocks).</p>
+  </div>
+</section>
+
+<!-- ===================== TYPE ===================== -->
+<section id="type" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">03 — Typography</p>
+    <h2>Type</h2>
+    <p class="lede"><b>Outfit</b> does almost everything — geometric, confident, modern. <b>Lora italic</b> is the single editorial grace note (taglines, “Simply Spectacular”). Words are big and few.</p>
+
+    <div class="spec">
+      <div class="label">DISPLAY — Outfit 800/900, uppercase, tight tracking (the “POCKET PERFECT” headline)</div>
+      <div class="d-display">Your phone case<br>is not a wallet.</div>
+    </div>
+    <div class="grid g2">
+      <div class="spec">
+        <div class="label">KICKER / TAGLINE — Outfit 600, +0.3em tracking, caps</div>
+        <div class="d-kicker">Sharp and always in sight</div>
+        <div style="height:14px"></div>
+        <div class="d-kicker" style="color:var(--signal)">Made for the pocket · Built for years</div>
+      </div>
+      <div class="spec">
+        <div class="label">SERIF MOMENT — Lora italic 500 (use once per frame)</div>
+        <div class="d-serif">Simply Spectacular.</div>
+      </div>
+    </div>
+    <div class="spec">
+      <div class="label">CATALOG CAPTION — mono / Outfit 400, small, tracked (the P&Co reference, IMG_4057)</div>
+      <div class="d-caption">SPECTA — Pop-Up Cardholder · Saffiano · Black / Steel Grey / Deep Navy / Cognac · RFID-safe · €60</div>
+    </div>
+
+    <div class="callout">
+      <b>The masthead device</b> (from the Numéro cover, IMG_4044): set one word <em>huge and thin</em>, then let the product or hand physically overlap it. It instantly reads “editorial,” not “ad.” Pair a thin oversized word with the bold display line for contrast.
+    </div>
+
+    <div class="two" style="margin-top:8px">
+      <div>
+        <h3>Rules</h3>
+        <ul class="muted" style="font-size:14.5px;padding-left:18px;margin:0">
+          <li>Max <b style="color:var(--cream)">two</b> type sizes per frame: a hero line + a kicker.</li>
+          <li>Cream <code>#FEF7EA</code> type on imagery; add a soft dark scrim under it so it never fights the photo.</li>
+          <li>Coral only for a single accent word, the CTA pill, or the colour chip — never a whole sentence.</li>
+          <li>Tight tracking on display (−2 to −3%); open tracking on kickers (+30%).</li>
+          <li>Left- or corner-anchored. Avoid centring everything.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Fonts</h3>
+        <p class="muted" style="font-size:14.5px">Primary <b style="color:var(--cream)">Outfit</b> (300–900) · Secondary serif <b style="color:var(--cream)">Lora</b> (italic). Both free on Google Fonts. Mono for spec captions only. Keep the brand kit in <code>~/Downloads/SPECTA/</code> as the source of truth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIGHT ===================== -->
+<section id="light" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">04 — Light & Grade</p>
+    <h2>Light & grade</h2>
+    <p class="lede">Six lighting setups cover the whole board. Pick one per frame and commit to it — half-lit beats evenly-lit every time.</p>
+
+    <div class="grid g3">
+      <div class="light dark"><div class="demo l-chiaro"></div><div class="inner"><h3>Hard key / chiaroscuro</h3><p>One hard source, deep falloff to black. Dramatic, sculptural. <span class="ref">IMG_4046 · 4043</span></p></div></div>
+      <div class="light dark"><div class="demo l-radial"></div><div class="inner"><h3>Warm radial spotlight</h3><p>Glowing amber centre, vignetted edges — the product floats in warmth. <span class="ref">IMG_4051</span></p></div></div>
+      <div class="light dark"><div class="demo l-slats"></div><div class="inner"><h3>Window-slat rake</h3><p>Hard daylight through blinds; crisp slat shadows across the surface. <span class="ref">IMG_4062 · pedestal-A</span></p></div></div>
+      <div class="light"><div class="demo l-soft" style="opacity:.55"></div><div class="inner"><h3>Soft daylight</h3><p>Wrapped north-window light, gentle shadow. The lifestyle/in-use look. <span class="ref">IMG_4059 · 4060 · 4061</span></p></div></div>
+      <div class="light dark"><div class="demo l-void"></div><div class="inner"><h3>Dark void</h3><p>Matte black surround, one soft directional key. Premium flat-lay / hero. <span class="ref">IMG_4056</span></p></div></div>
+      <div class="light dark"><div class="demo l-octa"></div><div class="inner"><h3>Big soft octabox</h3><p>Even, clean, top-down wrap for catalog clarity. <span class="ref">IMG_4057 · 4058</span></p></div></div>
+    </div>
+
+    <div class="two" style="margin-top:26px">
+      <div>
+        <h3>The grade (apply to every output)</h3>
+        <div class="recipe"><span class="c">// the warm cinematic look, in words</span>
+warm white-balance bias (gold highlights, cool-neutral shadows)
+gentle contrast · slightly lifted blacks · −5% global saturation
+soft vignette · fine film grain · subtle highlight bloom
+<span class="c">// matching ffmpeg string used on the SPECTA clips</span>
+eq=contrast=1.12:saturation=0.95:gamma=0.97,
+curves=preset=medium_contrast,
+vignette=PI/4.4,
+unsharp=5:5:0.45</div>
+      </div>
+      <div>
+        <h3>Notes</h3>
+        <ul class="muted" style="font-size:14.5px;padding-left:18px;margin:0">
+          <li><b style="color:var(--cream)">Black-on-dark is the trap.</b> The black colourway disappears — lift it (gamma +.05, a touch of brightness) and rake light across the saffiano so the weave reads.</li>
+          <li>Keep grain <b style="color:var(--cream)">subtle</b>. On video it balloons file size; on stills it sells “photographed, not rendered.”</li>
+          <li>Highlights stay warm; never let them go clinical-blue. Shadows can cool slightly for depth.</li>
+          <li>Always leave a true black point and a true white point — the grade is warm, not muddy.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPOSITION ===================== -->
+<section id="comp" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">05 — Composition & Framing</p>
+    <h2>How frames are built</h2>
+    <p class="lede">The board is disciplined about space. These are the moves that repeat.</p>
+    <div class="grid g3">
+      <div class="card"><div class="body">
+        <h3>Confident negative space</h3>
+        <p>Subject small or off-centre; let emptiness carry the frame. Type lives in the open area.</p>
+        <span class="ref">IMG_4046 · 4053 · 4057</span>
+      </div></div>
+      <div class="card"><div class="body">
+        <h3>Hands as the hero</h3>
+        <p>Held, pulled, pinched, slipped away. The grip gives scale, life and “mine.” Add silver rings + a watch for texture.</p>
+        <span class="ref">IMG_4051 · 4059 · 4060 · 4050</span>
+      </div></div>
+      <div class="card"><div class="body">
+        <h3>Macro texture crop</h3>
+        <p>Fill the frame with saffiano weave, zip teeth, stitch, embossed logo. Shallow DOF, one sharp plane.</p>
+        <span class="ref">IMG_4062 · 4050</span>
+      </div></div>
+      <div class="card"><div class="body">
+        <h3>Type breaks the subject</h3>
+        <p>Oversized word behind/over the product — the masthead device. Reads editorial, not advert.</p>
+        <span class="ref">IMG_4044 · 4041</span>
+      </div></div>
+      <div class="card"><div class="body">
+        <h3>Impossible physics</h3>
+        <p>Float, balance, stack against gravity. Playful, premium, scroll-stopping for the family-of-4 shot.</p>
+        <span class="ref">IMG_4058</span>
+      </div></div>
+      <div class="card"><div class="body">
+        <h3>Designed geometry</h3>
+        <p>Stack the colourways on coloured blocks/pedestals at staggered heights; hard light casts long shadows.</p>
+        <span class="ref">pedestal-A</span>
+      </div></div>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <b>Formats & safe zones.</b> Shoot/generate <b>4:5</b> for feed and <b>9:16</b> for story/reel. Keep all type inside the centre <b>~80%</b> — leave the top ~12% and bottom ~18% clear of words on 9:16 so platform UI never clips the headline or CTA.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SHOT RECIPES ===================== -->
+<section id="shots" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">06 — Shot Archetypes & Recipes</p>
+    <h2>The repeatable shots</h2>
+    <p class="lede">Each card = a reference frame from the board, what it's for, and a paste-ready generation prompt. Fill the <span style="color:var(--signal)">[brackets]</span>. Every prompt already carries the logo-lock — keep it.</p>
+
+    <h3 style="margin:8px 0 4px;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)">A · Product layer <span class="pill">lead with these</span></h3>
+    <div class="grid g3" style="margin-top:14px">
+
+      <div class="card"><div class="ph"><img src="series/pedestal-A.jpg" alt="pedestal set"></div><div class="body">
+        <span class="ref">REF · pedestal-A (applied)</span>
+        <h3>Colour-Pop Pedestal Set</h3>
+        <p>All four colourways on staggered coloured blocks, hard window light. The campaign “family” shot.</p>
+        <div class="when"><b>Use for:</b> range/launch hero, “Four Finishes”, web banners.</div>
+        <div class="recipe">Studio set, all four SPECTA pop-up cardholders (black, steel grey, deep navy, cognac saffiano) standing on <span class="k">[sand + coral + navy]</span> geometric pedestals at staggered heights, hard directional window-light raking through blinds, long crisp shadows, warm cinematic grade, ultra-real product + set, 50mm, f/8, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="do%20it/IMG_4062.jpg" alt="reflective still"></div><div class="body">
+        <span class="ref">REF · IMG_4062</span>
+        <h3>Cinematic Reflective Still</h3>
+        <p>Single wallet on a glossy black surface, window-slat light, mirror reflection. Quiet and expensive.</p>
+        <div class="when"><b>Use for:</b> single-colour hero, product-of-the-week, dark feed posts.</div>
+        <div class="recipe">A single <span class="k">[cognac]</span> SPECTA cardholder resting on a polished black glass surface, hard daylight through venetian blinds casting slat shadows, soft mirror reflection below, deep negative space, warm grade, shallow DOF, 85mm, f/2.8, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="do%20it/IMG_4058.jpg" alt="float stack"></div><div class="body">
+        <span class="ref">REF · IMG_4058</span>
+        <h3>Impossible Float / Stack</h3>
+        <p>The colourways balanced/floating against gravity on a pale seamless. Playful, premium.</p>
+        <div class="when"><b>Use for:</b> attention-grabbing range shot, motion-loop still, ads with copy room.</div>
+        <div class="recipe">Four SPECTA cardholders balanced in a gravity-defying floating stack, slightly tilted, on a pale <span class="k">[studio-blue]</span> seamless, soft even octabox light, tiny contact shadows, hyper-real, crisp edges, 50mm, f/9, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="IMG_4051.jpg" alt="radial spotlight in hands"></div><div class="body">
+        <span class="ref">REF · IMG_4051</span>
+        <h3>In-Hand · Radial Spotlight</h3>
+        <p>Product presented in two hands against a glowing amber radial gradient. Reverent, focused.</p>
+        <div class="when"><b>Use for:</b> “meet the product” reveal, the mechanism beat.</div>
+        <div class="recipe">Two hands (silver rings) holding a <span class="k">[black]</span> SPECTA cardholder up to camera, warm amber radial spotlight, glowing centre fading to dark vignette, face out of frame, macro saffiano detail, warm grade, 85mm, f/2, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="IMG_4056.jpg" alt="dark edc flatlay"></div><div class="body">
+        <span class="ref">REF · IMG_4056</span>
+        <h3>Dark EDC Flat-Lay</h3>
+        <p>The wallet as the anchor of an everyday-carry kit on a dark tray. Organised, masculine.</p>
+        <div class="when"><b>Use for:</b> “what fits your day” context, gifting, lifestyle without a model.</div>
+        <div class="recipe">Top-down EDC flat-lay on a dark matte surface: <span class="k">[navy]</span> SPECTA cardholder as hero beside a watch, sunglasses, keys, AirPods, neatly arranged, single soft directional key light, deep shadows, warm-cool grade, 35mm, f/5.6, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="IMG_4057.jpg" alt="catalog stack"></div><div class="body">
+        <span class="ref">REF · IMG_4057 (P&Co)</span>
+        <h3>Catalog Stack + Caption</h3>
+        <p>Clean product stack on neutral seamless with a wordmark + mono spec caption. E-com clarity.</p>
+        <div class="when"><b>Use for:</b> PDP imagery, “the line-up”, spec-forward posts.</div>
+        <div class="recipe">Three/four SPECTA cardholders stacked at slight offsets on a neutral greige seamless, soft octabox light, gentle shadow, lots of headroom for a wordmark + monospace caption beneath, ultra-real, 50mm, f/8, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+    </div>
+
+    <h3 style="margin:34px 0 4px;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)">B · Lifestyle layer <span class="pill" style="color:var(--muted);border-color:var(--line)">use when the gesture is the point</span></h3>
+    <div class="grid g3" style="margin-top:14px">
+
+      <div class="card"><div class="ph"><img src="IMG_4041.jpg" alt="pocket pull macro"></div><div class="body">
+        <span class="ref">REF · IMG_4041</span>
+        <h3>Pocket-Pull Macro + Headline</h3>
+        <p>Fingers drawing the wallet from a canvas pocket; huge cream headline. The hero ad layout.</p>
+        <div class="when"><b>Use for:</b> the flagship static — big line + product in one frame.</div>
+        <div class="recipe">Extreme close-up, a hand pulling a <span class="k">[cognac]</span> SPECTA cardholder from a tan canvas pocket, moody warm side light, shallow DOF, dark background top-left for a large cream Outfit headline, fine grain, 50mm, f/2, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="do%20it/IMG_4059.jpg" alt="fanned in hand"></div><div class="body">
+        <span class="ref">REF · IMG_4059</span>
+        <h3>Fanned Colourways in Hand</h3>
+        <p>A hand fans the colourways against greige. Shows the range + scale in one human gesture.</p>
+        <div class="when"><b>Use for:</b> “pick your finish”, range on a single frame, carousels.</div>
+        <div class="recipe">A raised hand (silver rings, waxed-jacket cuff) fanning three SPECTA cardholders (<span class="k">[black, cognac, navy]</span>) against a greige seamless, soft natural daylight, gentle shadow, ultra-real skin + leather, 50mm, f/2.8, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="do%20it/IMG_4061.jpg" alt="pocket daylight"></div><div class="body">
+        <span class="ref">REF · IMG_4061</span>
+        <h3>Back-Pocket · Daylight</h3>
+        <p>Slim wallet slipped into denim back pocket, soft daylight, warm seamless. Proof of “slim”.</p>
+        <div class="when"><b>Use for:</b> the “it disappears” / slim-profile message.</div>
+        <div class="recipe">Cropped at the hip, a hand slipping a <span class="k">[cognac]</span> SPECTA cardholder into the back pocket of light-wash denim, knit sweater above, soft daylight, warm tan background, ultra-real fabric + leather, 35mm, f/2.8, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+    </div>
+
+    <h3 style="margin:34px 0 4px;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)">C · Editorial / human layer <span class="pill" style="color:var(--muted);border-color:var(--line)">brand-world & covers</span></h3>
+    <div class="grid g3" style="margin-top:14px">
+
+      <div class="card"><div class="ph"><img src="IMG_4044.jpg" alt="magazine cover"></div><div class="body">
+        <span class="ref">REF · IMG_4044</span>
+        <h3>Magazine-Cover Layout</h3>
+        <p>Full figure on seamless, thin oversized masthead, corner cover-lines. Instant editorial gravity.</p>
+        <div class="when"><b>Use for:</b> campaign key art, “Specta World” issue, look-book cover.</div>
+        <div class="recipe">Full-length model on a grey seamless, relaxed walk, product in hand, single soft key, room around the figure for an oversized thin “SPECTA” masthead the subject overlaps + small corner cover-lines, warm grade, 4:5 or 9:16. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="IMG_4053.jpg" alt="accessory editorial"></div><div class="body">
+        <span class="ref">REF · IMG_4053</span>
+        <h3>Accessory Editorial Crop</h3>
+        <p>Tight on the body + accessory (here a watch); product enters as worn/used detail. Luxe, quiet.</p>
+        <div class="when"><b>Use for:</b> “lives on you” storytelling, premium texture posts.</div>
+        <div class="recipe">Editorial crop, back of a model's shoulder in an olive leather jacket, a <span class="k">[cognac]</span> SPECTA cardholder held at the collar, greige seamless, soft directional key, warm grade, shallow DOF, 85mm, f/2.5, 4:5. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+      <div class="card"><div class="ph"><img src="IMG_4046.jpg" alt="chiaroscuro"></div><div class="body">
+        <span class="ref">REF · IMG_4046</span>
+        <h3>Chiaroscuro Mood</h3>
+        <p>Lone figure, single hard light, vast shadow + negative space. Pure atmosphere for openers/end-cards.</p>
+        <div class="when"><b>Use for:</b> reel intros, “in the dark” reveals, brand-film stills.</div>
+        <div class="recipe">High-contrast scene, a seated figure under one hard overhead light, deep black surround, huge negative space, product catching a single highlight, B&W or warm-mono, grain, 35mm, 9:16. <span class="c">+LOGO-LOCK</span></div>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOGO LOCK ===================== -->
+<section id="logo" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">07 — Logo Lock</p>
+    <h2>Never let AI touch the logo</h2>
+    <p class="lede">The single most important rule. Generators love to “improve” the mark — historically SPECTA → BETA. Lock it, every time.</p>
+    <div class="callout">
+      <b>Always seed from real reference photos / clean cutouts</b> (the studio shots + transparent <code>cut-*.png</code> cutouts) — never from an AI-generated image. Then append this exact paragraph to every prompt:
+      <div class="lock">KEEP THE SPECTA LOGO EXACTLY AS IN THE REFERENCE PHOTOS — same "SPECTA" wordmark on the rail + same embossed hexagonal S logomark; identical lettering / spelling / font / proportions; do NOT redesign, restyle, re-spell, recolour or invent any logo or text; keep it pixel-faithful.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3>The mark</h3>
+        <p class="muted" style="font-size:14.5px">Hexagonal “S” logomark + “SPECTA” wordmark, embossed/debossed tone-on-tone on the leather and printed on the metal rail. It whispers — keep it subtle, never recoloured to coral on the product itself.</p>
+      </div>
+      <div>
+        <h3>After generating — always check</h3>
+        <ul class="muted" style="font-size:14.5px;padding-left:18px;margin:0">
+          <li>Spelling reads <b style="color:var(--cream)">S-P-E-C-T-A</b> at 100% zoom.</li>
+          <li>Hex logomark shape intact (6 sides, centred S).</li>
+          <li>Saffiano cross-hatch weave present, not smoothed plastic.</li>
+          <li>Slider/rail + card-staircase geometry correct.</li>
+          <li>Hands: 5 fingers, believable nails/skin.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DO / DON'T ===================== -->
+<section id="dodont" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">08 — Quick Gut-Check</p>
+    <h2>Do / Don't</h2>
+    <div class="dd">
+      <div class="col do">
+        <h3><span class="mk">✓</span> Do</h3>
+        <ul>
+          <li>One dominant light, one subject, generous negative space.</li>
+          <li>Warm cinematic grade + a touch of grain on every output.</li>
+          <li>Real hands, real surfaces, real saffiano texture in macro.</li>
+          <li>Lead with controlled studio / designed sets (pedestal, float, reflective).</li>
+          <li>Two type sizes max; cream type on a soft scrim.</li>
+          <li>Seed from real photos; lock the logo; check spelling after.</li>
+        </ul>
+      </div>
+      <div class="col dont">
+        <h3><span class="mk">✕</span> Don't</h3>
+        <ul>
+          <li>Flat, even, shadowless studio light — it kills the mood.</li>
+          <li>Clinical blue / over-saturated HDR grades.</li>
+          <li>Cheap candid “grab shots” unless the gesture is the whole point.</li>
+          <li>Cluttered frames or competing focal points.</li>
+          <li>Walls of copy, centred everything, coral sentences.</li>
+          <li>Luxury / heritage / hustle clichés, or screaming logos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROMPT KIT ===================== -->
+<section id="prompt" class="anchor">
+  <div class="wrap">
+    <p class="eyebrow">09 — Generation Cheat-Sheet</p>
+    <h2>The base prompt skeleton</h2>
+    <p class="lede">Tuned for <b>nano_banana_pro</b> (4:5 / 9:16, 2k) seeded with real refs. Swap the bracketed parts; the tail stays constant.</p>
+    <div class="recipe"><span class="c">// 1 · SUBJECT + FINISH</span>
+<span class="k">[shot archetype]</span> of the SPECTA pop-up cardholder in <span class="k">[black / steel grey / deep navy / cognac]</span> saffiano leather,
+<span class="c">// 2 · COMPOSITION</span>
+<span class="k">[in two hands / on a pedestal set / floating stack / pulled from pocket / flat-lay]</span>, confident negative space,
+<span class="c">// 3 · SET + SURFACE</span>
+on <span class="k">[greige seamless / polished black glass / pale studio-blue / tan canvas / coloured pedestals]</span>,
+<span class="c">// 4 · LIGHT</span>
+<span class="k">[single hard key / warm amber radial / window-slat rake / soft north daylight / dark void + soft key]</span>,
+<span class="c">// 5 · CAMERA + GRADE</span>
+shot on <span class="k">[50mm f/2 / 85mm f/2.8 / 35mm f/5.6]</span>, shallow depth of field,
+warm cinematic grade, gentle contrast, slightly desaturated, soft vignette, fine film grain,
+ultra-realistic product AND scene, photographic — not rendered, aspect <span class="k">[4:5 / 9:16]</span>, 2k.
+<span class="c">// 6 · LOGO-LOCK  (never edit)</span>
+KEEP THE SPECTA LOGO EXACTLY AS IN THE REFERENCE PHOTOS — same "SPECTA" wordmark on the
+rail + same embossed hexagonal S logomark; identical lettering/spelling/font/proportions;
+do NOT redesign, restyle, re-spell, recolour or invent any logo or text; keep it pixel-faithful.</div>
+
+    <div class="two" style="margin-top:24px">
+      <div>
+        <h3>Seed references to attach</h3>
+        <ul class="muted" style="font-size:14.5px;padding-left:18px;margin:0">
+          <li>Clean cutout (<code>cut-[colour].png</code>) — best for a crisp logo.</li>
+          <li>Real closed-front photo of that colourway.</li>
+          <li>Real side-rail photo (locks the “SPECTA” wordmark).</li>
+          <li>A real cards-popped frame (mechanism accuracy).</li>
+          <li>One style ref from <code>inspo-2/</code> for mood.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where things live</h3>
+        <ul class="muted" style="font-size:14.5px;padding-left:18px;margin:0">
+          <li>This guide → <code>assets/inspo-2/SPECTA-VISUAL-GUIDE.html</code></li>
+          <li>Reference board → <code>inspo-2/</code> (IMG_4041–4062) + <code>inspo-2/do it/</code></li>
+          <li>Best outputs → <code>inspo-2/series/</code></li>
+          <li>Brand kit / fonts / logo → <code>~/Downloads/SPECTA/</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>SPECTA · Visual Style Guide — built from the inspo-2 reference board.</span>
+    <span>Simply Spectacular · shopspecta.com</span>
+  </div>
+</footer>
+
+</body>
+</html>

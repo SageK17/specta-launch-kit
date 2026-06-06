@@ -1,0 +1,68 @@
+/* SPECTA Concept Lab — design-led graphic system (blueprint, infographic, ticket, brutalist, motion) */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap');
+:root{
+  --ink:#0C0F12; --cream:#FEF7EA; --coral:#FF5A4D; --navy:#002F49; --maroon:#5B1112;
+  --cyan:#46d4ff; --bp:#08161f;
+  --blk:#1A1B1D; --gry:#6E747A; --nvy:#2A3A57; --cog:#9C5A2C;
+  --sans:'Outfit',sans-serif; --serif:'Lora',Georgia,serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+.art{position:relative;overflow:hidden;font-family:var(--sans);color:var(--cream);background:var(--ink)}
+.art.r45{width:1080px;height:1350px}
+.art.r916{width:1080px;height:1920px}
+.art.r11{width:1080px;height:1080px}
+.art img{display:block}
+.coral{color:var(--coral)}
+.serif{font-family:var(--serif);font-style:italic;font-weight:500}
+.logo{position:absolute;z-index:20}
+.logo img{height:60px;width:auto;display:block;filter:drop-shadow(0 2px 14px rgba(0,0,0,.5))}
+.kick{font-family:var(--mono);font-size:22px;letter-spacing:.28em;text-transform:uppercase;font-weight:500}
+.mega{font-weight:900;letter-spacing:-.03em;line-height:.86;text-transform:uppercase}
+.cta{display:inline-flex;align-items:center;gap:11px;background:var(--coral);color:var(--ink);font-weight:800;font-size:22px;padding:15px 26px;border-radius:999px}
+.cta .dot{width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.sub{font-size:25px;font-weight:500;line-height:1.32;color:rgba(254,247,234,.9)}
+
+/* ---------- blueprint ---------- */
+.blueprint{background:
+  linear-gradient(0deg, rgba(70,212,255,.10) 1px, transparent 1px) 0 0/100% 54px,
+  linear-gradient(90deg, rgba(70,212,255,.10) 1px, transparent 1px) 0 0/54px 100%,
+  radial-gradient(120% 90% at 50% 40%, #0d2230, var(--bp));
+  color:#cdeefc}
+.bp{color:var(--cyan)}
+.label{position:absolute;font-family:var(--mono);font-size:18px;letter-spacing:.06em;color:var(--cyan);z-index:10}
+.label b{color:#eafaff;font-weight:700;display:block;font-size:19px;letter-spacing:.04em}
+.label .n{opacity:.7;font-size:14px}
+.dot{position:absolute;width:11px;height:11px;border:2px solid var(--cyan);border-radius:50%;background:rgba(70,212,255,.25);z-index:11}
+.lead{position:absolute;background:var(--cyan);opacity:.55;z-index:9}
+
+/* ---------- meter / infographic ---------- */
+.track{height:46px;border-radius:999px;background:#1b2128;border:1px solid #2a323b;overflow:hidden}
+.fill{height:100%;border-radius:999px}
+.fill.brick{background:linear-gradient(90deg,#4a4f57,#6E747A)}
+.fill.specta{background:linear-gradient(90deg,#ff5a4d,#ff8a72)}
+
+/* ---------- ticket ---------- */
+.ticket{position:absolute;background:var(--cream);color:var(--ink);border-radius:26px;
+  box-shadow:0 40px 90px rgba(0,0,0,.55)}
+.ticket .perf{position:absolute;top:0;bottom:0;width:2px;border-left:4px dashed rgba(12,15,18,.25)}
+.notch{position:absolute;width:46px;height:46px;background:var(--ink);border-radius:50%}
+.barcode{height:64px;background:repeating-linear-gradient(90deg,#0C0F12 0 3px,transparent 3px 6px,#0C0F12 6px 8px,transparent 8px 13px)}
+.field .k{font-family:var(--mono);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:#8a857b}
+.field .v{font-weight:800;font-size:25px;letter-spacing:-.01em}
+
+/* ---------- swatch quadrants ---------- */
+.quad{position:absolute;display:grid;place-items:center;overflow:hidden}
+.quad .nm{position:absolute;bottom:22px;left:24px;font-family:var(--mono);font-size:17px;letter-spacing:.1em}
+.quad .hx{position:absolute;top:22px;right:24px;font-family:var(--mono);font-size:14px;opacity:.7}
+.quad img{height:62%;width:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.5))}
+.glow{position:absolute;width:74%;height:74%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.22),transparent)}
+.badge{position:absolute;z-index:15;display:grid;place-items:center;border-radius:50%;background:var(--ink);border:2px solid rgba(255,255,255,.12);text-align:center}
+
+/* ---------- hex build ---------- */
+.hex{position:absolute;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.crd{position:absolute;border-radius:10px;background:linear-gradient(135deg,#e9edf2,#aab3bd 55%,#7c8590);
+  box-shadow:0 10px 26px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.4)}
+
+/* ---------- motion stage ---------- */
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--ink);font-family:var(--sans);color:var(--cream)}

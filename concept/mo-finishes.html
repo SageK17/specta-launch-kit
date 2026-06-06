@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Outfit',sans-serif;color:#FEF7EA}
+#bgm{position:absolute;inset:0;animation:bg 5s linear forwards}
+@keyframes bg{0%,18%{background:#1A1B1D}25%,38%{background:#6E747A}45%,58%{background:#2A3A57}65%,80%{background:#9C5A2C}88%,100%{background:#0C0F12}}
+.wal{position:absolute;left:50%;top:760px;transform:translate(-50%,-50%);height:880px;width:auto;opacity:0;filter:drop-shadow(0 40px 70px rgba(0,0,0,.55))}
+#b{animation:f1 5s linear forwards}#g{animation:f2 5s linear forwards}#n{animation:f3 5s linear forwards}#c{animation:f4 5s linear forwards}
+@keyframes f1{0%{opacity:0;transform:translate(-50%,-46%)}4%{opacity:1;transform:translate(-50%,-50%)}18%{opacity:1}22%{opacity:0}100%{opacity:0}}
+@keyframes f2{0%,21%{opacity:0;transform:translate(-50%,-46%)}26%{opacity:1;transform:translate(-50%,-50%)}38%{opacity:1}42%{opacity:0}100%{opacity:0}}
+@keyframes f3{0%,41%{opacity:0;transform:translate(-50%,-46%)}46%{opacity:1;transform:translate(-50%,-50%)}58%{opacity:1}62%{opacity:0}100%{opacity:0}}
+@keyframes f4{0%,61%{opacity:0;transform:translate(-50%,-46%)}66%{opacity:1;transform:translate(-50%,-50%)}86%{opacity:1}100%{opacity:1}}
+.nm{position:absolute;left:0;width:100%;text-align:center;top:1360px;font-family:'JetBrains Mono',monospace;font-size:34px;letter-spacing:.2em;opacity:0}
+#nb{animation:f1 5s linear forwards}#ng{animation:f2 5s linear forwards}#nn{animation:f3 5s linear forwards}#nc{animation:f4 5s linear forwards}
+.end{position:absolute;left:0;width:100%;text-align:center;top:1480px;opacity:0;animation:en 5s linear forwards}
+.end .h{font-weight:900;font-size:96px;letter-spacing:-.02em;line-height:.92}.end .h .x{color:#FF5A4D}
+@keyframes en{0%,82%{opacity:0;transform:translateY(20px)}90%{opacity:1;transform:none}100%{opacity:1}}
+.kick{position:absolute;top:120px;left:0;width:100%;text-align:center;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:.3em;color:rgba(254,247,234,.85)}
+</style></head>
+<body>
+<div class="stage">
+  <div id="bgm"></div>
+  <div class="kick">FOUR FINISHES</div>
+  <img class="wal" id="b" src="../brand/cut-black.png">
+  <img class="wal" id="g" src="../brand/cut-grey.png">
+  <img class="wal" id="n" src="../brand/cut-navy.png">
+  <img class="wal" id="c" src="../brand/cut-brown.png">
+  <div class="nm" id="nb" style="color:#fef7ea">BLACK</div>
+  <div class="nm" id="ng" style="color:#16181b">STEEL GREY</div>
+  <div class="nm" id="nn" style="color:#dfe6f2">DEEP NAVY</div>
+  <div class="nm" id="nc" style="color:#2a160a">COGNAC</div>
+  <div class="end"><div class="h">Pick your <span class="x">finish.</span></div></div>
+</div>
+</body></html>

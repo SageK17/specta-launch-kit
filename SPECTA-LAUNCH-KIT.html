@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPECTA — Launch Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0C0F12;--ink2:#15191E;--ink3:#1B2026;--line:#252C34;--line2:#323b44;--cream:#FEF7EA;--muted:#9FB0BD;--faint:#6c7a85;--coral:#FF5A4D;--navy:#002F49;--maroon:#5B1112;--sans:'Outfit',-apple-system,Segoe UI,Roboto,sans-serif;--serif:'Lora',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--maxw:1180px}
+  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--cream);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;background-image:radial-gradient(900px 600px at 82% -5%,rgba(255,90,77,.06),transparent 60%)}
+  a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  section{padding:60px 0;border-top:1px solid var(--line)}
+  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--coral);font-weight:600;margin-bottom:14px}
+  h2{font-size:clamp(24px,3.2vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:10px}
+  h3{font-size:18px;font-weight:700;margin-bottom:6px}
+  .lede{color:var(--muted);max-width:64ch;font-size:16px;margin-bottom:28px}
+  p{margin-bottom:12px}.muted{color:var(--muted)}
+  code{font-family:var(--mono);font-size:.86em;color:#cdd8df;background:#0a0d10;border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+  /* nav */
+  nav.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(12,15,18,.82);border-bottom:1px solid var(--line)}
+  nav.top .row{max-width:var(--maxw);margin:0 auto;padding:12px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.06em}
+  .hex{width:22px;height:24px;background:var(--coral);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;color:var(--ink);font-size:12px;font-weight:900;font-family:var(--serif);font-style:italic}
+  nav.top .links{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+  nav.top .links a{font-size:12.5px;color:var(--muted);padding:6px 10px;border-radius:7px}
+  nav.top .links a:hover{color:var(--cream);background:var(--ink3)}
+  /* hero */
+  .hero{padding:64px 0 50px;border-top:none}
+  .ghost{font-weight:300;font-size:clamp(56px,15vw,184px);letter-spacing:-.03em;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(254,247,234,.15)}
+  .lead{font-weight:900;font-size:clamp(30px,6vw,76px);letter-spacing:-.03em;line-height:.92;margin:-.16em 0 0}
+  .lead em{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--coral)}
+  .hero .sub{color:var(--muted);max-width:62ch;margin-top:20px;font-size:17px}
+  .meta{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:12px;color:var(--cream);background:var(--ink3);border:1px solid var(--line2);padding:6px 11px;border-radius:999px}
+  .tag b{color:var(--coral)}
+  /* open-these cards */
+  .nav-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(198px,1fr));gap:16px}
+  @media(max-width:900px){.nav-cards{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.nav-cards{grid-template-columns:1fr}}
+  .nc{background:var(--ink2);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .15s,transform .15s}
+  .nc:hover{border-color:var(--coral);transform:translateY(-2px)}
+  .nc .ph{aspect-ratio:4/5;overflow:hidden}
+  .nc .b{padding:14px 15px 16px}
+  .nc .b .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);font-weight:600}
+  .nc .b h3{margin:6px 0 5px;font-size:17px}
+  .nc .b p{font-size:13px;color:var(--muted);margin:0}
+  .nc .b .go{margin-top:10px;font-size:12.5px;color:var(--cream);font-weight:600}
+  /* generic grids */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:760px){.two{grid-template-columns:1fr}}
+  .panel{background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+  ul.clean{list-style:none;margin:0;padding:0}ul.clean li{font-size:14.5px;color:var(--muted);padding:8px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+  ul.clean li:first-child{border-top:none}ul.clean li:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--coral);margin-top:8px;flex:0 0 auto}
+  ul.clean li b{color:var(--cream);font-weight:600}
+  /* swatches */
+  .sw{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  .sw div{flex:1;min-width:84px}.sw .chip{height:54px;border-radius:9px;border:1px solid rgba(255,255,255,.08)}
+  .sw .nm{font-size:11.5px;font-weight:600;margin-top:7px}.sw .hx{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+  /* ad preview strip */
+  .strip{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  @media(max-width:900px){.strip{grid-template-columns:repeat(3,1fr)}}
+  .strip .cell{border-radius:9px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--coral);color:var(--ink);font-weight:800;font-size:15px;padding:13px 22px;border-radius:999px;margin-top:18px}
+  .btn.ghost{background:transparent;color:var(--cream);border:1px solid var(--line2)}
+  /* matrix table */
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--coral);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+  td.m{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  /* file tree */
+  pre.tree{font-family:var(--mono);font-size:12.5px;color:#cdd8df;background:#0a0d10;border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:10px;padding:16px 18px;overflow:auto;line-height:1.7}
+  pre.tree b{color:var(--cream)}pre.tree i{color:var(--faint);font-style:normal}
+  footer{padding:36px 0 70px;color:var(--faint);font-size:13px;border-top:1px solid var(--line)}
+  .callout{background:linear-gradient(180deg,#1a1411,#15191e);border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:12px;padding:16px 18px;margin-top:16px;font-size:14.5px}
+  .callout b{color:var(--cream)}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="row">
+  <span class="brand"><span class="hex">S</span> SPECTA</span>
+  <span class="muted" style="font-size:12.5px">Launch Kit</span>
+  <div class="links">
+    <a href="#open">Open</a><a href="#brand">Brand</a><a href="#ads">Ads</a><a href="#site">Website</a><a href="#course">Campaign</a><a href="#files">Files</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Everything to launch · for the course team + the website build</p>
+  <div class="ghost">SPECTA</div>
+  <h1 class="lead">The launch kit — <em>Simply Spectacular</em></h1>
+  <p class="sub">One place for the whole visual world: the brand system, a 140-shot content library, <b style="color:var(--cream)">68 ready-to-post ads</b> (real logo, bold creative), and a paste-ready website spec. Built from real product photography — logo-accurate, on-brand, and easy to extend.</p>
+  <div class="meta">
+    <span class="tag"><b>Product</b> SPECTA Wallet · €60</span>
+    <span class="tag"><b>Finishes</b> Black · Grey · Navy · Cognac</span>
+    <span class="tag"><b>Ads</b> 68 · 4:5 · 9:16 · 1:1</span>
+    <span class="tag"><b>Voice</b> Sharp and always in sight</span>
+  </div>
+</div></header>
+
+<!-- OPEN THESE -->
+<section id="open"><div class="wrap">
+  <p class="eyebrow">01 — Start here</p>
+  <h2>Open these</h2>
+  <p class="lede">Four documents. Click straight in.</p>
+  <div class="nav-cards">
+    <a class="nc" href="SPECTA-catalog.html">
+      <div class="ph"><img src="series/catalog-stack-4col.jpg"></div>
+      <div class="b"><div class="k">Full studio library</div><h3>Full Catalog</h3><p>Every image &amp; video in Ad Designs, organised by series — final ads, motion, the deliverable series, brand kit + all the raw clips not yet made into ads.</p><div class="go">Open catalog →</div></div></a>
+    <a class="nc" href="ads/SPECTA-flagship-ads.html">
+      <div class="ph"><img src="ads/ad01-goeswhereyougo.jpg"></div>
+      <div class="b"><div class="k">34 ads</div><h3>Flagship Ads</h3><p>Ready-to-post PNGs across 4:5, 9:16 &amp; 1:1.</p><div class="go">Open gallery →</div></div></a>
+    <a class="nc" href="SPECTA-scenes.html">
+      <div class="ph"><img src="series/float-4col-9x16-v2.jpg"></div>
+      <div class="b"><div class="k">Scene library</div><h3>The Shots</h3><p>The product dropped into real scenes, all four finishes.</p><div class="go">Open gallery →</div></div></a>
+    <a class="nc" href="SPECTA-VISUAL-GUIDE.html">
+      <div class="ph"><img src="series/reflective-navy-9x16.jpg"></div>
+      <div class="b"><div class="k">Brand system</div><h3>Visual Guide</h3><p>Palette, type, light, composition + shot recipes.</p><div class="go">Open guide →</div></div></a>
+    <a class="nc" href="SHOPIFY-HANDOFF.md">
+      <div class="ph"><img src="series/catalog-stack-4col.jpg"></div>
+      <div class="b"><div class="k">For the website</div><h3>Shopify Handoff</h3><p>Paste-ready copy, image picks, palette, SEO.</p><div class="go">Open doc →</div></div></a>
+    <a class="nc" href="SPECTA-concepts.html">
+      <div class="ph"><img src="concept/slim.jpg"></div>
+      <div class="b"><div class="k">Concept lab</div><h3>Bold &amp; Motion</h3><p>Blueprint, infographics, boarding pass + animated MP4s.</p><div class="go">Open lab →</div></div></a>
+    <a class="nc" href="SPECTA-graphics.html">
+      <div class="ph"><img src="graphics/gfx-chrome.jpg"></div>
+      <div class="b"><div class="k">Graphics drop</div><h3>38 Design Styles</h3><p>Neon-noir, bento, holo card, tactile, magazine, Pantone, Wrapped + Corteiz / Nike / Apple homages.</p><div class="go">Open drop →</div></div></a>
+    <a class="nc" href="SPECTA-tiktok.html">
+      <div class="ph"><img src="tiktok/tk7-waitforit.jpg"></div>
+      <div class="b"><div class="k">TikTok pack</div><h3>Viral Kit</h3><p>AI UGC creator ad, satisfying pop videos, hook covers + a 12-idea playbook.</p><div class="go">Open pack →</div></div></a>
+    <a class="nc" href="SPECTA-library.html">
+      <div class="ph"><img src="library/crazy-black-cosmic.jpg"></div>
+      <div class="b"><div class="k">Content library</div><h3>143 Source Shots</h3><p>Every hero, concept, model &amp; UGC image behind the inspo-2 ads.</p><div class="go">Open library →</div></div></a>
+  </div>
+</div></section>
+
+<!-- BRAND -->
+<section id="brand"><div class="wrap">
+  <p class="eyebrow">02 — Brand snapshot</p>
+  <h2>The essentials</h2>
+  <div class="two">
+    <div class="panel">
+      <h3>Product</h3>
+      <ul class="clean">
+        <li><b>SPECTA Wallet</b> — slim pop-up cardholder, €60</li>
+        <li><b>One-press pop-up</b> — slide the tab, cards fan up</li>
+        <li><b>RFID-blocking</b> Saffiano leather + aluminium core</li>
+        <li><b>Front-pocket slim</b> — 4–6 cards, no bulk</li>
+        <li><b>Four finishes</b> — Black · Steel Grey · Deep Navy · Cognac</li>
+      </ul>
+      <div class="callout"><b>Lines that work:</b> Sharp and always in sight · Simply Spectacular · Your phone case is not a wallet · Wallets are back · From sketch to statement · No back-pocket brick.</div>
+    </div>
+    <div class="panel">
+      <h3>Palette</h3>
+      <div class="sw">
+        <div><div class="chip" style="background:#FEF7EA"></div><div class="nm">Cream</div><div class="hx">#FEF7EA</div></div>
+        <div><div class="chip" style="background:#0C0F12"></div><div class="nm">Ink</div><div class="hx">#0C0F12</div></div>
+        <div><div class="chip" style="background:#FF5A4D"></div><div class="nm">Signal Coral</div><div class="hx">#FF5A4D</div></div>
+        <div><div class="chip" style="background:#002F49"></div><div class="nm">Nordic Noir</div><div class="hx">#002F49</div></div>
+      </div>
+      <div class="sw" style="margin-top:14px">
+        <div><div class="chip" style="background:#1A1B1D"></div><div class="nm">Black</div><div class="hx">#1A1B1D</div></div>
+        <div><div class="chip" style="background:#6E747A"></div><div class="nm">Steel Grey</div><div class="hx">#6E747A</div></div>
+        <div><div class="chip" style="background:#2A3A57"></div><div class="nm">Deep Navy</div><div class="hx">#2A3A57</div></div>
+        <div><div class="chip" style="background:#9C5A2C"></div><div class="nm">Cognac</div><div class="hx">#9C5A2C</div></div>
+      </div>
+      <h3 style="margin-top:20px">Type</h3>
+      <p class="muted" style="font-size:14px;margin:0">Display <b style="color:var(--cream)">Outfit</b> (800/900, tight, uppercase) · accent <b style="color:var(--cream)">Lora italic</b> (taglines) · coral for one accent word + CTA. Full system in the Visual Guide.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ADS -->
+<section id="ads"><div class="wrap">
+  <p class="eyebrow">03 — The campaign</p>
+  <h2>68 flagship ads</h2>
+  <p class="lede">A full campaign across funnel stages and formats — real SPECTA logo, bold creative (cosmic, flame, cyberpunk, exploded mechanism), plus clean templates. All generated from one config over the library, so it's consistent and trivial to extend.</p>
+  <div class="strip">
+    <div class="cell"><img src="ads/ad35-cosmic.jpg"></div>
+    <div class="cell"><img src="ads/ad40-exploded.jpg"></div>
+    <div class="cell"><img src="ads/ad39-flame.jpg"></div>
+    <div class="cell"><img src="ads/ad36-cyberpunk.jpg"></div>
+    <div class="cell"><img src="ads/ad46-lighttrails.jpg"></div>
+    <div class="cell"><img src="ads/ad60-anyone.jpg"></div>
+  </div>
+  <a class="btn" href="ads/SPECTA-flagship-ads.html">Open all 68 ads →</a>
+
+  <h3 style="margin-top:34px">Messaging matrix (selection)</h3>
+  <table>
+    <tr><th>Ad</th><th>Message</th><th>Funnel</th><th>Format</th></tr>
+    <tr><td>It goes where you go</td><td>Aspirational hero / brand</td><td>Awareness</td><td class="m">4:5 · 9:16</td></tr>
+    <tr><td>Your phone case is not a wallet</td><td>Problem / scroll-stopping hook</td><td>Awareness</td><td class="m">9:16</td></tr>
+    <tr><td>One press · Cards up</td><td>The mechanism</td><td>Consideration</td><td class="m">9:16</td></tr>
+    <tr><td>Four finishes · One obsession</td><td>Range / colour choice</td><td>Consideration</td><td class="m">9:16 · 4:5</td></tr>
+    <tr><td>Slim your carry / front pocket</td><td>Slim proof (vs Bellroy)</td><td>Consideration</td><td class="m">9:16 · 4:5</td></tr>
+    <tr><td>No back-pocket brick</td><td>Comparative (vs bulky wallets)</td><td>Consideration</td><td class="m">9:16</td></tr>
+    <tr><td>Sharp and always in sight</td><td>Core tagline</td><td>Brand</td><td class="m">9:16</td></tr>
+    <tr><td>Summer, sorted / Sun-ready</td><td>Seasonal</td><td>Promo</td><td class="m">4:5 · 9:16</td></tr>
+    <tr><td>Always in sight (gift box)</td><td>Gifting</td><td>Promo</td><td class="m">4:5</td></tr>
+    <tr><td>Every great brand starts with a feeling</td><td>Manifesto / story</td><td>Brand</td><td class="m">4:5</td></tr>
+  </table>
+</div></section>
+
+<!-- WEBSITE -->
+<section id="site"><div class="wrap">
+  <p class="eyebrow">04 — For the website build</p>
+  <h2>Shopify handoff</h2>
+  <p class="lede">Hand <code>SHOPIFY-HANDOFF.md</code> to the build chat — it has paste-ready product + homepage copy, the exact image picks per page, palette, fonts and SEO.</p>
+  <div class="two">
+    <div class="panel">
+      <h3>What's in the doc</h3>
+      <ul class="clean">
+        <li><b>Product page</b> — title, subtitle, short + long description, feature bullets</li>
+        <li><b>Variants</b> — four finishes with swatch hex</li>
+        <li><b>Homepage</b> — hero, value trio, story strip, newsletter</li>
+        <li><b>Image map</b> — which series shot powers each page</li>
+        <li><b>Brand kit + SEO</b> — fonts, palette, title tags, alt-text pattern</li>
+      </ul>
+      <a class="btn ghost" href="SHOPIFY-HANDOFF.md">Open the handoff →</a>
+    </div>
+    <div class="panel">
+      <h3>Top image picks</h3>
+      <ul class="clean">
+        <li><b>Hero</b> — <code>series/trunk-single-cognac-4x5.jpg</code></li>
+        <li><b>Four finishes banner</b> — <code>series/float-4col-9x16-v2.jpg</code></li>
+        <li><b>How it works</b> — <code>series/macro-mechanism-black-9x16.jpg</code></li>
+        <li><b>Lifestyle</b> — <code>series/marble-flatlay-cognac-4x5.png</code></li>
+        <li><b>Gifting</b> — <code>series/giftbox-navy-4x5.png</code></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- CAMPAIGN / HOW TO EXTEND -->
+<section id="course"><div class="wrap">
+  <p class="eyebrow">05 — For the team · how it's built</p>
+  <h2>Extend it in minutes</h2>
+  <div class="two">
+    <div class="panel">
+      <h3>Make a new ad</h3>
+      <p class="muted" style="font-size:14.5px">Every ad is a row of data. Add an entry to <code>ads/build.js</code> (image, format, theme, headline), then:</p>
+      <pre class="tree">cd assets/inspo-2/ads
+node build.js          <i># writes HTML + manifest + gallery</i>
+node render-still.js   <i># renders every ad to a 2× PNG</i></pre>
+      <p class="muted" style="font-size:13.5px;margin-top:10px">Formats: <code>45</code> (1080×1350), <code>916</code> (1080×1920), <code>11</code> (1080×1080). Headlines support <code>|</code> line-breaks and <code>{coral}…{/coral}</code>.</p>
+    </div>
+    <div class="panel">
+      <h3>Make a new scene</h3>
+      <p class="muted" style="font-size:14.5px">Scenes are generated from real product cut-outs with a locked prompt so the logo and shape stay pixel-accurate. The recipes + the exact prompt are in the Visual Guide. New scene images drop into <code>series/</code> and become available to <code>build.js</code>.</p>
+      <div class="callout"><b>Quality rule:</b> always seed from the real <code>photos-real</code> cut-outs + product shots, and keep the logo-lock paragraph — never let a generator redraw the SPECTA mark.</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FILES -->
+<section id="files"><div class="wrap">
+  <p class="eyebrow">06 — Where everything lives</p>
+  <h2>File map</h2>
+  <pre class="tree">assets/inspo-2/
+├─ <b>SPECTA-LAUNCH-KIT.html</b>     <i># this hub — start here</i>
+├─ <b>SPECTA-VISUAL-GUIDE.html</b>   <i># brand system + shot recipes</i>
+├─ <b>SPECTA-scenes.html</b>         <i># scene library gallery</i>
+├─ <b>SHOPIFY-HANDOFF.md</b>         <i># paste-ready website spec</i>
+├─ <b>SPECTA-library.html</b>        <i># full content library (143 images)</i>
+├─ brand/                        <i># the real SPECTA logo + marks (used on every ad)</i>
+├─ library/                      <i># 79 hero / concept / model / UGC shots</i>
+├─ <b>SPECTA-concepts.html</b>       <i># concept lab — graphic posters + motion MP4s</i>
+├─ concept/                      <i># design-led graphics + 2 motion pieces (editable)</i>
+├─ <b>SPECTA-graphics.html</b>       <i># graphics drop — 10 AI design styles</i>
+├─ graphics/                     <i># riso · pop-art · stickers · chrome · manga · blueprint …</i>
+├─ <b>SPECTA-tiktok.html</b>         <i># TikTok pack — satisfying videos, hook covers, playbook</i>
+├─ tiktok/                       <i># native covers + 2 caption-overlaid pop MP4s (editable)</i>
+├─ series/                       <i># ~50 scene images (2K, logo-accurate)</i>
+│   ├─ trunk-single-cognac-4x5.jpg, float-4col-9x16-v2.jpg, …
+│   └─ marble-…, beach-…, macro-…, giftbox-…, carhood-…
+└─ ads/
+    ├─ <b>SPECTA-flagship-ads.html</b>  <i># gallery of all 34</i>
+    ├─ ad01…ad34 .html + .png        <i># artboards + rendered PNGs</i>
+    ├─ build.js                      <i># the ad generator (config)</i>
+    ├─ render-still.js               <i># HTML → 2× PNG</i>
+    ├─ ad.css                        <i># the ad design system</i>
+    └─ manifest.json                 <i># source of truth</i></pre>
+  <p class="muted" style="font-size:13.5px;margin-top:14px">Reference mood board (Pinterest saves that defined the look): <code>assets/inspo-2/IMG_4041–4062</code> + the named <code>.jpeg</code> refs.</p>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap">
+  <span>SPECTA · Launch Kit · brand system + scene library + 34 ads + website spec</span>
+  <span>Simply Spectacular · shopspecta.com</span>
+</div></footer>
+
+</body></html>
